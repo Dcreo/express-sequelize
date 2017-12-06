@@ -1,0 +1,11 @@
+<h1>Список пользователей</h1>
+<a href="/admin/users/new" class="btn btn-primary">Добавить нового пользователя</a>
+
+<table>
+  <% users.forEach((user) => { %>
+    <tr>
+      <td><%= user.firstName %> <%= user.lastName %></td>
+      <td><a href="/admin/user/<%= user.id %>/edit">Редактировать</a></td>
+    </tr>
+  <% }) %>
+</table>
