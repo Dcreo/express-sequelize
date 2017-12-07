@@ -1,3 +1,7 @@
+<% layout('/layout/admin') -%>
+
+<% block('title', 'Пользователи') -%>
+
 <h1>Список пользователей</h1>
 <a href="/admin/users/new" class="btn btn-primary">Добавить нового пользователя</a>
 
@@ -5,7 +9,8 @@
   <% users.forEach((user) => { %>
     <tr>
       <td><%= user.firstName %> <%= user.lastName %></td>
-      <td><a href="/admin/user/<%= user.id %>/edit">Редактировать</a></td>
+      <td><a href="/admin/users/<%= user.id %>/edit">Редактировать</a></td>
+      <td><a href="/admin/users/<%= user.id %>" class='js-delete-method'>Удалить</a></td>
     </tr>
   <% }) %>
 </table>
